@@ -56,6 +56,7 @@ construction_scm_dual_repo/
 ```
 
 **Backend**
+```
 construction_scm_crewai/
 ├── agents/           # Agent definitions
 ├── tasks/            # Task flows
@@ -67,7 +68,6 @@ construction_scm_crewai/
 ├── README.md         # This file
 └── agent_flowchart.png # Visualization of agent interactions
 ```
-
 ---
 
 ## 🚀 Deployment Instructions
