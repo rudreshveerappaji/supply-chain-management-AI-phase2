@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd
 
-API_BASE = "https://yourproject.up.railway.app"
+API_BASE = "https://supply-chain-management-ai-phase2-production.up.railway.app"
 
 st.set_page_config(page_title="Construction SCM", layout="wide")
 st.title("🏗️ Construction SCM - Multi-Agent Dashboard")
