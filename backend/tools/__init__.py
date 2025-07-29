@@ -1,0 +1,1 @@
+# Tool integrations (e.g., Google Sheets, OCR, etc.)
