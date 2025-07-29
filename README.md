@@ -43,16 +43,22 @@ Task flow definitions have been created and saved in the tasks/ folder:
 This project is split into two folders to support deployment on both **Streamlit Community Cloud** (frontend) and **Railway.app** (backend).
 
 ```
-construction_scm_dual_repo/
-├── backend/     # Flask + CrewAI (for Railway)
+my-scm-repo/
+├── backend/                  ← For Railway app (CrewAI + Flask)
 │   ├── main_as_api.py
-│   ├── requirements.txt
-│   └── agents/, tasks/, data/, etc.
+│   ├── requirements.txt      ← Backend-specific (Railway)
+│   ├── agents/
+│   ├── tasks/
+│   ├── data/
+│   └── ...
 │
-├── frontend/    # Streamlit UI (for Streamlit Cloud)
+├── frontend/                 ← For Streamlit app (UI only)
 │   ├── streamlit_app.py
-│   ├── requirements.txt
-│   └── data/
+│   ├── requirements.txt      ← Frontend-specific (Streamlit Cloud)
+│   └── data/                 ← Optional: if UI shows local CSVs
+│
+├── .gitignore
+└── README.md
 ```
 
 **Backend**
