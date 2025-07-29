@@ -5,7 +5,7 @@ from crewai import Crew
 import os
 from openai import OpenAI
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+OpenAI.api_key = os.getenv("OPENAI_API_KEY")
 openai_key = os.getenv("OPENAI_API_KEY")  # This should NOT be None
 if openai_key is None:
     raise ValueError("CHROMA_OPENAI_API_KEY environment variable is not set.")
