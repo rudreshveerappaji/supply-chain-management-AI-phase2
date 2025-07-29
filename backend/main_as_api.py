@@ -3,6 +3,8 @@ from agents.setup_agents import setup_agents
 from tasks.setup_tasks import setup_tasks
 from crewai import Crew
 
+openai_key = os.getenv("OPENAI_API_KEY")
+
 app = Flask(__name__)
 
 @app.route("/")
