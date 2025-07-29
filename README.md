@@ -70,6 +70,17 @@ construction_scm_crewai/
 ```
 ---
 
+### Flow
+
+Streamlit (UI on Community Cloud)
+        ↓
+       API call (HTTP)
+        ↓
+Railways.app (Flask API or Background Worker)
+        ↓
+CrewAI engine runs and returns results (writes to DB or returns JSON)
+
+
 ## 🚀 Deployment Instructions
 
 ### Railway Backend
@@ -86,20 +97,6 @@ construction_scm_crewai/
 2. Select `frontend/streamlit_app.py` for deployment
 3. Set `requirements.txt` to the one inside `frontend/`
 4. App will send API requests to the Railway backend
-
----
-
-## ▶️ How to Run
-
-```bash
-python main.py
-```
-
-This will:
-1. Load agents from `agents/setup_agents.py`
-2. Set up tasks from `tasks/setup_tasks.py`
-3. Launch the CrewAI multi-agent orchestration
-4. Output results in `data/` folder
 
 ---
 
