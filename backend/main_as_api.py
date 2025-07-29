@@ -3,8 +3,12 @@ from agents.setup_agents import setup_agents
 from tasks.setup_tasks import setup_tasks
 from crewai import Crew
 import os
+from openai import OpenAI
 
-openai_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
+openai_key = os.getenv("OPENAI_API_KEY")  # This should NOT be None
+if openai_key is None:
+    raise ValueError("CHROMA_OPENAI_API_KEY environment variable is not set.")
 
 app = Flask(__name__)
 
@@ -27,7 +31,7 @@ def run_agents():
         print("✅ Tasks set up")
 
         from crewai import Crew
-        crew = Crew(agents=list(agents.values()), tasks=tasks, memory=True, verbose=True)
+        crew = Crew(agents=list(agents.values()), tasks=tasks, memory=True, verbose=True, api_key=openai_key)
         print("✅ Crew initialized")
 
         result = crew.run()
