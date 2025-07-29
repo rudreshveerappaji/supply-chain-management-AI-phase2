@@ -3,11 +3,12 @@ from agents.setup_agents import setup_agents
 from tasks.setup_tasks import setup_tasks
 from crewai import Crew
 import os
-from openai import OpenAI
+import openai
 
-OpenAI.api_key = os.getenv("OPENAI_API_KEY")
-if OpenAI.api_key is None:
-    raise ValueError("OpenAI.api_key environment variable is not set.")
+openai.api_key = os.getenv("OPENAI_API_KEY")
+if openai.api_key is None:
+    raise ValueError("OPENAI_API_KEY environment variable is not set.")
+
 '''
 openai_key = os.getenv("OPENAI_API_KEY")  # This should NOT be None
 if openai_key is None:
@@ -35,7 +36,7 @@ def run_agents():
         print("✅ Tasks set up")
 
         from crewai import Crew
-        crew = Crew(agents=list(agents.values()), tasks=tasks, memory=True, verbose=True, api_key=openai_key)
+        crew = Crew(agents=list(agents.values()), tasks=tasks, memory=True, verbose=True, api_key=openai.api_key)
         print("✅ Crew initialized")
 
         result = crew.run()
