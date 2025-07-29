@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 from agents.setup_agents import setup_agents
 from tasks.setup_tasks import setup_tasks
 from crewai import Crew
+import os
 
 openai_key = os.getenv("OPENAI_API_KEY")
 
