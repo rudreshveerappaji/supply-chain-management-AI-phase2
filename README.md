@@ -77,7 +77,7 @@ construction_scm_crewai/
 ---
 
 ### Flow
-
+```
 Streamlit (UI on Community Cloud)
         ↓
        API call (HTTP)
@@ -85,7 +85,7 @@ Streamlit (UI on Community Cloud)
 Railways.app (Flask API or Background Worker)
         ↓
 CrewAI engine runs and returns results (writes to DB or returns JSON)
-
+```
 
 ## 🚀 Deployment Instructions
 
