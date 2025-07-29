@@ -6,9 +6,13 @@ import os
 from openai import OpenAI
 
 OpenAI.api_key = os.getenv("OPENAI_API_KEY")
+if OpenAI.api_key is None:
+    raise ValueError("OpenAI.api_key environment variable is not set.")
+'''
 openai_key = os.getenv("OPENAI_API_KEY")  # This should NOT be None
 if openai_key is None:
     raise ValueError("CHROMA_OPENAI_API_KEY environment variable is not set.")
+'''
 
 app = Flask(__name__)
 
